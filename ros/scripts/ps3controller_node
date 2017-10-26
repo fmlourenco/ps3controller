@@ -1,0 +1,6 @@
+#!/usr/bin/env python
+
+import ps3controller_ros.ps3controller
+
+if __name__ == '__main__':
+ ps3controller_ros.ps3controller.main()
