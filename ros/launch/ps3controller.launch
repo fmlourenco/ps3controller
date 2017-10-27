@@ -2,8 +2,12 @@
 <launch>
 
  <!-- small description about your node -->
+
+
+ <node pkg="joy" type="joy_node" name="joy_node"/>	
+
+ <node pkg="ps3controller" type="ps3controller_node" name="ps3controller_node" output="screen"/>
+
  
- <node pkg="my_package_name" type="my_node_name" name="my_node_name"
- respawn="false" output="screen" args="$(find ps3controller_name)/ros/config/my_arg_file.yaml"/>
 
 </launch>

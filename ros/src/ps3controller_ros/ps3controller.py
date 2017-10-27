@@ -58,7 +58,7 @@ def callback(data, args):
     elif data.buttons[11]:
         speed=speed*0.9
 
-    twist.linear.x = data.buttons[9]*speed; twist.linear.y = 0; twist.linear.z = 0;
+    twist.linear.x = (data.buttons[9]-data.buttons[8])*speed; twist.linear.y = 0; twist.linear.z = 0;
     twist.angular.x = 0; twist.angular.y = 0; twist.angular.z = -data.axes[0]*turn
     pub.publish(twist)
     rospy.loginfo(rospy.get_caller_id() + 'I heard %s', data.axes[0:2])
