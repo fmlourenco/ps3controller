@@ -59,7 +59,7 @@ def callback(data, args):
         speed=speed*0.9
 
     twist.linear.x = (data.buttons[9]-data.buttons[8])*speed; twist.linear.y = 0; twist.linear.z = 0;
-    twist.angular.x = 0; twist.angular.y = 0; twist.angular.z = -data.axes[0]*turn
+    twist.angular.x = 0; twist.angular.y = 0; twist.angular.z = data.axes[0]*turn
     pub.publish(twist)
     rospy.loginfo(rospy.get_caller_id() + 'I heard %s', data.axes[0:2])
 
@@ -72,7 +72,7 @@ def main():
     # run simultaneously.
     rospy.init_node('ps3controller', anonymous=True)
 
-    pub = rospy.Publisher('cmd_vel', Twist, queue_size = 1)
+    pub = rospy.Publisher('RosAria/cmd_vel', Twist, queue_size = 1)
 
     rospy.Subscriber('joy', Joy, callback,(pub))
 
