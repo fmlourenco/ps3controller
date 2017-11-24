@@ -42,9 +42,9 @@ from sensor_msgs.msg import Joy
 from geometry_msgs.msg import Twist
 
 global speed 
-speed= .5
+speed= .1
 global turn 
-turn= 1
+turn= .3
 
 def callback(data, args):
     global speed
